@@ -1,0 +1,43 @@
+=== PROJECT DEEP DIVE: VectorDB Studio (based on the project's README) ===
+What it is: A fully working vector database written from scratch in Python (Flask + NumPy) with a single-file web UI. It shows how production vector databases such as Pinecone, Weaviate, Chroma and Milvus work under the hood. It is an educational solo project released under the MIT license.
+
+Main features:
+- Three nearest-neighbour search algorithms built from scratch: HNSW (approximate, production-grade), KD-Tree (exact for Euclidean distance) and Brute Force (exact baseline). They can be run side by side.
+- Three distance metrics: cosine, Euclidean (L2) and Manhattan (L1).
+- A 16-dimensional demo index with 20 pre-loaded semantic vectors across four categories: Computer Science, Math, Food and Sports.
+- A 2-D PCA scatter plot of the semantic space, computed in the browser with a hand-written PCA (power iteration in JavaScript), where the category clusters are visible.
+- Benchmark mode: one click runs all three algorithms on the same query and compares latency in microseconds.
+- HNSW inspector: an endpoint (/hnsw-info) exposes the layered graph structure.
+- Real document embeddings: pasted text is chunked, embedded into 768-dimensional vectors and stored in a separate HNSW index.
+- A complete RAG (Retrieval-Augmented Generation) pipeline: the question is embedded, the top-k chunks are retrieved, and an LLM answers using those chunks. The UI shows which chunks were retrieved and their cosine distances.
+- Two AI back-ends: the Google Gemini API (gemini-embedding-001 and gemini-flash-latest) or a local Ollama install (nomic-embed-text and llama3.2) that works offline.
+- A permanent knowledge base: every .txt or .md file in the knowledge/ folder is embedded automatically at startup in a background thread.
+- Public-demo safeguards: a READ_ONLY mode, per-IP rate limiting, a 512 KB request size cap and a chunk-count cap (40 chunks per insert).
+- A full REST API: insert, delete, search, benchmark, graph inspection, document management and RAG.
+- Zero build step: a pure Python backend plus one index.html file, with no Node or bundler needed.
+- The 16-D demo tab turns typed phrases into vectors with a small keyword dictionary rather than an AI model. This is a deliberate teaching device so the demo works with zero setup.
+
+How the RAG flow works:
+1. The text is split into overlapping chunks (250 words with a 30-word overlap).
+2. Each chunk is embedded into a 768-D vector and stored in the HNSW index.
+3. The user's question is embedded into a 768-D query vector.
+4. HNSW search returns the top-k nearest chunks (cosine distance of 0.7 or less).
+5. A prompt is built from the retrieved context and the question.
+6. The LLM answers, and the chunks it was shown are displayed.
+
+Algorithms (how they work):
+- Brute Force: compares the query with every vector, O(N*d), always exact. It is the baseline for comparison.
+- KD-Tree: a binary tree that splits space along one dimension per level. Search descends to the closest leaf, then backtracks and prunes subtrees that cannot contain better results. It works very well in low dimensions.
+- HNSW (Hierarchical Navigable Small World): a multi-layer graph in which upper layers are sparse "express lanes" and the bottom layer contains every point, giving roughly O(log N) search time. Parameters used: M=16, M0=32, ef_construction=200, ef_search=50, with a deterministic random seed (42). Higher layers are exponentially rarer. Insertion descends greedily, then runs a beam search on each layer and connects the new node bidirectionally with pruning. Search descends greedily and runs a beam search on layer 0 using a priority queue.
+- Why HNSW suits high dimensions: it navigates a proximity graph and does not rely on axis-aligned bounds, so it stays fast on 768-D embeddings, where KD-Tree pruning becomes less effective.
+
+Engineering details:
+- Thread safety: each database has its own threading lock and Flask runs threaded.
+- Rate limiting: an in-memory sliding window per client IP protects the free-tier API quota.
+- Gemini client: automatic retries on HTTP 429, 500, 502, 503 and 504 with 3 s, 6 s and 9 s back-off; a 256-entry query-embedding cache that halves API usage; separate RETRIEVAL_QUERY and RETRIEVAL_DOCUMENT task types; 768 dimensions requested to save memory.
+- Document search uses brute force when there are fewer than 10 chunks (exact and faster on tiny sets) and HNSW from 10 chunks up. Results farther than cosine distance 0.7 are filtered out so irrelevant chunks never reach the LLM.
+- Two separate databases: a 16-D demo database (all three algorithms kept in sync) and a document database (768-D, cosine distance).
+- Configuration through environment variables and a built-in .env loader (GEMINI_API_KEY, GEN_MODEL, EMBED_MODEL, OLLAMA_URL, PORT, READ_ONLY, RATE_LIMIT_PER_MIN).
+- The project ships with a detailed README covering the architecture, API reference, algorithm explanations and troubleshooting.
+
+Design choices and ideas for next steps (share only if the visitor asks about limitations or future work, and present them constructively): storage is in-memory by design to keep the project simple and educational, and permanent text goes in the knowledge/ folder, which reloads at startup. Possible extensions: saving the index to disk, PDF/DOCX upload, streaming answers, an improved HNSW neighbour-selection heuristic with re-linking on delete, metadata filtering, hybrid BM25 plus vector search, recall measurement, vectorised distance calculations, unit tests, and authentication with multi-tenant collections.

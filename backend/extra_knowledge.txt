@@ -1,0 +1,27 @@
+=== ABOUT SIMRAN ===
+Strengths: Problem-solving and learning new tools quickly. Having taken part in multiple hackathons, she is comfortable working both in a team and solo.
+Currently learning: AI Engineering, through both courses and hands-on projects.
+Work style: Works well both solo and in a team. Likes to plan first before building.
+Outside coding: Simran describes herself as a creative person. She enjoys painting, digital art, filming herself, and exploring new things, such as sports or new art styles.
+Languages spoken: English, Hindi, and Odia.
+
+=== INTERNSHIP DETAILS: Software Developer Intern at Risoapp India Pvt. Ltd. ===
+Duration: May 2026 to Aug 2026 (4 months). Location: Brahmapur (also spelled Berhampur), Odisha, India. Work mode: Hybrid. This was real experience on a production project.
+- Contributed to the development and maintenance of the MentorX University backend using Node.js and Express.js.
+- Developed and maintained RESTful APIs for multiple application modules.
+- Implemented backend functionality and integrated the APIs with MongoDB.
+- Contributed to the design and development of the Admin Dashboard frontend.
+- Performed API testing, debugging, and troubleshooting to resolve backend-frontend integration issues.
+- Collaborated on product development tasks, helping deliver reliable and maintainable software.
+
+=== HACKATHONS AND COMPETITIONS ===
+Simran has taken part in multiple hackathons. In hackathon teams she works as a frontend developer and also contributes to problem-solving and brainstorming.
+
+Code Kriti 4.0 - Innovation Challenge (3rd Position, Mar 2026)
+- Organized by Coding Design and Development and Parala Maharaja Engineering College, Berhampur.
+- Simran competed as a team of two with her teammate Mahesh Kumar Raulo.
+- Qualifier Round: they analyzed a failed startup case study, identified the major reasons behind its failure, and suggested possible improvements.
+- Final Round: they presented their own startup idea in a pitch presentation, followed by an interactive Q&A session with the judges.
+- This challenge was a case-study and pitching format rather than a coding round. It let them apply analytical thinking, creativity, and teamwork under time pressure.
+
+Hack Arena 2.0 (Runner-up among 40+ teams): a national-level hackathon organized by the IEEE Student Branch, Guru Nanak Institutions, Hyderabad. Simran's team presented The Indian Compass there (a cultural and spiritual guide of India with an integrated AI cultural assistant and interactive maps), and finished as runner-up. Simran worked as the frontend developer on The Indian Compass and contributed to problem-solving and brainstorming. When asked about this project, also share its GitHub repository and live demo link.

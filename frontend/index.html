@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="rgb(16, 17, 31)" />
+  <meta name="description" content="D Simran Patra — CS undergraduate, developer, AI builder. Explore projects, read the resume, and chat with my AI portfolio assistant." />
+  <meta name="keywords" content="Simran Patra, portfolio, developer, AI, RAG, React, Python, FastAPI, NIST University" />
+  <meta property="og:title" content="SimranOS — AI Portfolio" />
+  <meta property="og:description" content="Interactive AI-powered developer portfolio for Simran Patra." />
+  <title>SimranOS — AI Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Background glows -->
+  <div class="wallpaper-glow glow-one"></div>
+  <div class="wallpaper-glow glow-two"></div>
+
+  <!-- macOS Menu Bar -->
+  <header class="menubar" role="banner">
+    <div class="menu-left">
+      <span class="apple-mark" aria-hidden="true">✳</span>
+      <strong>SimranOS</strong>
+      <span class="menu-muted">Portfolio</span>
+    </div>
+    <div class="menu-right">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span id="system-status" aria-live="polite">Connecting…</span>
+      <span class="menu-clock" id="clock" aria-label="Current time">--:--</span>
+    </div>
+  </header>
+
+  <!-- Desktop -->
+  <main class="desktop" id="main-content">
+
+    <!-- Desktop shortcut icons -->
+    <aside class="desktop-shortcuts" aria-label="Desktop shortcuts">
+      <a class="desktop-icon" href="/resume" target="_blank" rel="noreferrer" id="resume-shortcut" aria-label="Open Simran's resume PDF">
+        <span class="file-illustration pdf-file"><span>PDF</span></span>
+        <span>Simran's Resume</span>
+      </a>
+      <button class="desktop-icon" id="ask-shortcut" type="button" aria-label="Open AI chat">
+        <span class="ask-icon"><span aria-hidden="true">✦</span></span>
+        <span>Ask Simran AI</span>
+      </button>
+      <button class="desktop-icon" id="projects-shortcut" type="button" aria-label="Jump to projects">
+        <span class="folder-illustration"><span aria-hidden="true">⌘</span></span>
+        <span>Projects</span>
+      </button>
+    </aside>
+
+    <!-- Main portfolio window -->
+    <section class="window" aria-label="Portfolio window">
+      <div class="window-bar" role="toolbar" aria-label="Window controls">
+        <div class="traffic-lights">
+          <button class="light red"    aria-label="Close window"       id="close-window"></button>
+          <button class="light yellow" aria-label="Minimize window"    id="minimize-window"></button>
+          <button class="light green"  aria-label="Toggle window size" id="maximize-window"></button>
+        </div>
+        <div class="window-title"><span class="tiny-sparkle" aria-hidden="true">✦</span> simran / portfolio</div>
+        <div class="window-actions"><span class="window-chip">BUILD 2026.10</span></div>
+      </div>
+
+      <div class="window-content" id="portfolio-window">
+
+        <!-- In-window nav -->
+        <nav class="top-nav" aria-label="Portfolio navigation">
+          <a class="wordmark" href="#home" aria-label="D Simran Patra portfolio home">SP<span aria-hidden="true">.</span></a>
+          <div class="nav-links">
+            <a href="#home" data-page-link="home"><i data-lucide="house"></i> Home</a>
+            <a href="#work" data-page-link="work"><i data-lucide="folder-kanban"></i> Projects</a>
+            <a href="#about" data-page-link="about"><i data-lucide="user-round"></i> About</a>
+            <a href="#contact" data-page-link="contact"><i data-lucide="mail"></i> Contact</a>
+          </div>
+          <button class="nav-ask" id="nav-ask" type="button"><i data-lucide="message-circle"></i> Let's talk <span class="nav-ask-arrow" aria-hidden="true">↗</span></button>
+        </nav>
+
+        <!-- Hero section -->
+        <section class="hero" id="home" aria-labelledby="hero-heading">
+          <div class="hero-copy">
+            <div class="eyebrow">
+              <span class="pulse" aria-hidden="true"></span>
+              AVAILABLE FOR OPPORTUNITIES
+              <span class="eyebrow-line" aria-hidden="true"></span>
+            </div>
+            <h1 id="hero-heading">
+              I build things<br />that <span class="gradient-word">think</span><span class="period" aria-hidden="true">.</span>
+            </h1>
+            <p class="hero-subtitle">
+              Hey, I'm <strong>D Simran Patra</strong> — a developer exploring the intersection of software engineering, AI, and thoughtful design.
+            </p>
+            <div class="hero-actions">
+              <button class="primary-button" id="hero-ask" type="button">
+                <span class="button-sparkle" aria-hidden="true">✦</span> Ask my AI twin <span class="arrow" aria-hidden="true">↗</span>
+              </button>
+              <a class="secondary-button" href="#work">Explore my work <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="hero-meta" aria-label="Quick facts">
+              <span><span class="meta-icon" aria-hidden="true">⌘</span> CS undergraduate · NIST University</span>
+              <span class="meta-divider" aria-hidden="true">/</span>
+              <span>India · IST</span>
+            </div>
+          </div>
+          <div class="hero-art" aria-label="Abstract AI-inspired artwork" aria-hidden="true">
+            <div class="art-orbit orbit-a"></div>
+            <div class="art-orbit orbit-b"></div>
+            <div class="art-core"><span>sp</span><i>✦</i></div>
+            <div class="art-tag tag-top"><span class="tag-dot"></span>curious by default</div>
+            <div class="art-tag tag-bottom"><span class="mono">0101</span>turning ideas into systems</div>
+            <div class="art-cross cross-one">+</div>
+            <div class="art-cross cross-two">✳</div>
+          </div>
+        </section>
+
+        <!-- Skills ticker -->
+        <div class="ticker" aria-hidden="true">
+          <div class="ticker-track">
+            <span>FULL-STACK DEVELOPMENT</span><b>✳</b>
+            <span>AI / LLM APPLICATIONS</span><b>✳</b>
+            <span>RAG &amp; VECTOR SEARCH</span><b>✳</b>
+            <span>PRODUCT-MINDED ENGINEERING</span><b>✳</b>
+            <span>FULL-STACK DEVELOPMENT</span><b>✳</b>
+            <span>AI / LLM APPLICATIONS</span><b>✳</b>
+            <span>RAG &amp; VECTOR SEARCH</span><b>✳</b>
+          </div>
+        </div>
+
+        <!-- Projects section -->
+        <section class="projects-section" id="work" aria-labelledby="projects-heading">
+          <div class="section-heading">
+            <div>
+              <div class="eyebrow section-eyebrow">A FEW THINGS I'VE MADE</div>
+              <h2 id="projects-heading">Selected <span>work.</span></h2>
+            </div>
+            <span class="section-count">01 — 04 <span>/ PROJECTS</span></span>
+          </div>
+          <div class="project-grid">
+
+            <!-- CREDEX.IO -->
+            <article class="project-card project-purple" aria-labelledby="proj-credex-title">
+              <div class="project-top">
+                <span class="project-index">01 / TEAM PROJECT</span>
+                <span class="project-symbol" aria-hidden="true">◈</span>
+              </div>
+              <div class="project-art credex-art" aria-hidden="true">
+                <div class="credex-ring"></div>
+                <div class="score-card">
+                  <span>DEV SCORE</span>
+                  <strong>87<span>/100</span></strong>
+                  <div class="score-bars"><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+                <span class="art-caption">signal over noise</span>
+              </div>
+              <div class="project-info">
+                <h3 id="proj-credex-title">CREDEX.IO</h3>
+                <p>A credibility scoring experience that turns developer activity into a signal recruiters can understand.</p>
+                <div class="tech-tags">
+                  <span>React</span><span>JavaScript</span><span>UI Engineering</span><span>Developer Tools</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/simran21122/CREDEX" target="_blank" rel="noopener noreferrer">
+                    GitHub <span aria-hidden="true">↗</span>
+                  </a>
+                  <a href="https://credex-io.vercel.app" target="_blank" rel="noopener noreferrer">
+                    Live demo <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- The Indian Compass -->
+            <article class="project-card project-orange" aria-labelledby="proj-compass-title">
+              <div class="project-top">
+                <span class="project-index">02 / TEAM PROJECT</span>
+                <span class="project-symbol" aria-hidden="true">✳</span>
+              </div>
+              <div class="project-art compass-art" aria-hidden="true">
+                <div class="compass-circle">
+                  <div class="compass-needle"></div>
+                  <span>N</span><span>E</span><span>S</span><span>W</span>
+                </div>
+                <div class="compass-label">THE INDIAN<br />COMPASS</div>
+                <div class="compass-sun"></div>
+              </div>
+              <div class="project-info">
+                <h3 id="proj-compass-title">The Indian Compass</h3>
+                <p>An interactive journey through India's heritage, festivals, cuisines, and artisan stories.</p>
+                <div class="tech-tags">
+                  <span>React</span><span>Tailwind CSS</span><span>AI Assistant</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/simran21122/The-Indian-Compass" target="_blank" rel="noopener noreferrer">
+                    GitHub <span aria-hidden="true">↗</span>
+                  </a>
+                  <a href="https://the-indian-compass-9dlu.vercel.app" target="_blank" rel="noopener noreferrer">
+                    Live demo <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- VectorDB Studio -->
+            <article class="project-card project-blue" aria-labelledby="proj-vector-title">
+              <div class="project-top">
+                <span class="project-index">03 / SOLO PROJECT</span>
+                <span class="project-symbol" aria-hidden="true">⌘</span>
+              </div>
+              <div class="project-art vector-art" aria-hidden="true">
+                <div class="vector-grid"></div>
+                <span class="vector-node node-a"></span>
+                <span class="vector-node node-b"></span>
+                <span class="vector-node node-c"></span>
+                <span class="vector-node node-d"></span>
+                <span class="vector-node node-e"></span>
+                <span class="vector-node node-f"></span>
+                <svg viewBox="0 0 300 150" aria-hidden="true">
+                  <path d="M35 92 L91 46 L145 79 L202 30 L265 67 M91 46 L117 120 L202 30 M145 79 L244 119 L265 67"
+                        fill="none" stroke="currentColor" stroke-width="1.2" opacity=".7"/>
+                </svg>
+                <div class="vector-label">VECTOR SPACE / 768D</div>
+              </div>
+              <div class="project-info">
+                <h3 id="proj-vector-title">VectorDB Studio</h3>
+                <p>A from-scratch vector database with HNSW, KD-Tree &amp; Brute Force search strategies, distance metrics, latency benchmarks, and a full RAG pipeline.</p>
+                <div class="tech-tags">
+                  <span>Python</span><span>RAG</span><span>Embeddings</span><span>HNSW</span><span>Gemini API</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/simran21122/AI_Model" target="_blank" rel="noopener noreferrer">
+                    GitHub <span aria-hidden="true">↗</span>
+                  </a>
+                  <a href="#" class="no-demo" data-project="VectorDB Studio">
+                    Demo not listed <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- CineMatch -->
+            <article class="project-card project-green" aria-labelledby="proj-cinema-title">
+              <div class="project-top">
+                <span class="project-index">04 / SOLO PROJECT</span>
+                <span class="project-symbol" aria-hidden="true">◉</span>
+              </div>
+              <div class="project-art cinema-art" aria-hidden="true">
+                <div class="film-frame">
+                  <div class="film-scene">
+                    <span class="scene-sun"></span>
+                    <span class="scene-hill hill-one"></span>
+                    <span class="scene-hill hill-two"></span>
+                    <span class="scene-hill hill-three"></span>
+                  </div>
+                  <div class="film-caption">YOUR NEXT<br />FAVOURITE FILM</div>
+                </div>
+                <div class="film-stars">✦　✦　✦</div>
+              </div>
+              <div class="project-info">
+                <h3 id="proj-cinema-title">CineMatch</h3>
+                <p>A movie recommendation app using TF-IDF content similarity and the TMDB API for genre-based suggestions. Deployed on Render.</p>
+                <div class="tech-tags">
+                  <span>Python</span><span>TF-IDF</span><span>TMDB API</span><span>REST API</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/simran21122/CINEMATCH" target="_blank" rel="noopener noreferrer">
+                    GitHub <span aria-hidden="true">↗</span>
+                  </a>
+                  <a href="https://cinematch-f9e1.onrender.com" target="_blank" rel="noopener noreferrer">
+                    Live demo <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- About section -->
+        <section class="about-section" id="about" aria-labelledby="about-heading">
+          <div class="about-label">
+            <span class="about-star" aria-hidden="true">✳</span>
+            <span>THE PERSON<br />BEHIND THE PIXELS</span>
+          </div>
+          <div class="about-copy">
+            <h2 id="about-heading">Curiosity is my<br /><span>favourite framework.</span></h2>
+            <p>
+              I'm a Computer Science undergraduate at NIST University (CGPA 8.9) who enjoys building useful products, understanding how systems work, and bringing AI ideas to life. From shipping web experiences to experimenting with vector search and RAG pipelines, I'm happiest when learning by building.
+            </p>
+            <p>
+              I've interned as a Software Developer at Risoapp India Pvt Ltd (Node.js, Express, React) and as an AI-ML Intern at the Central Tool Room &amp; Training Centre (MSME), Govt. of India, where I built a real-time face recognition system. I've also been Runner-up at a national-level IEEE hackathon.
+            </p>
+            <div class="skill-cloud" aria-label="Technical skills">
+              <span>JavaScript</span><span>Python</span><span>Java</span>
+              <span>React.js</span><span>Node.js</span><span>Express.js</span>
+              <span>FastAPI</span><span>SQL</span><span>MongoDB</span>
+              <span>Machine Learning</span><span>RAG</span><span>Vector Databases</span>
+              <span>REST APIs</span><span>Git</span><span>Tailwind CSS</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact page / section -->
+        <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+          <div class="contact-icon"><i data-lucide="send"></i></div>
+          <div class="eyebrow section-eyebrow">HAVE SOMETHING IN MIND?</div>
+          <h2 id="contact-heading">Let's build something<br /><span>meaningful.</span></h2>
+          <p>Have an opportunity, a project idea, or just want to talk about AI and software? My inbox is open.</p>
+          <div class="contact-actions">
+            <a class="primary-button" href="mailto:simranpatra754@gmail.com"><i data-lucide="mail"></i> Email me <span class="arrow">↗</span></a>
+            <a class="secondary-button" href="https://linkedin.com/in/d-simran-patra-b53684340/" target="_blank" rel="noopener noreferrer"><i data-lucide="linkedin"></i> Connect on LinkedIn</a>
+          </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo">
+          <a class="wordmark" href="#home" aria-label="Back to top">SP<span aria-hidden="true">.</span></a>
+          <span>Made with curiosity, caffeine &amp; a little AI.</span>
+          <div class="footer-links">
+            <a href="https://github.com/simran21122" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a href="https://linkedin.com/in/d-simran-patra-b53684340/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a href="mailto:simranpatra754@gmail.com">Email ↗</a>
+          </div>
+        </footer>
+
+      </div><!-- /window-content -->
+    </section><!-- /window -->
+
+    <div class="desktop-note" aria-hidden="true">
+      <span class="note-dot"></span> Designed to feel a little different.
+    </div>
+
+  </main><!-- /desktop -->
+
+  <!-- Dock -->
+  <div class="dock-wrap" role="navigation" aria-label="Dock">
+    <div class="dock">
+      <button class="dock-app finder-app" title="Portfolio home" id="dock-home" type="button" aria-label="Go to portfolio home">
+        <span aria-hidden="true">⌘</span>
+      </button>
+      <button class="dock-app resume-app" title="Open resume" id="dock-resume" type="button" aria-label="Open resume PDF">
+        <span aria-hidden="true">PDF</span>
+      </button>
+      <button class="dock-app ai-app" title="Ask Simran AI" id="dock-ask" type="button" aria-label="Open AI chat">
+        <span aria-hidden="true">✦</span>
+      </button>
+      <a class="dock-app github-app" title="GitHub" href="https://github.com/simran21122" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+        <span aria-hidden="true">GH</span>
+      </a>
+      <span class="dock-divider" aria-hidden="true"></span>
+      <a class="dock-app mail-app" title="Email Simran" href="mailto:simranpatra754@gmail.com" aria-label="Send email">
+        <span aria-hidden="true">✉</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- AI Chat Overlay -->
+  <div class="chat-overlay" id="chat-overlay" aria-hidden="true" role="presentation">
+    <section class="chat-window" role="dialog" aria-modal="true" aria-labelledby="chat-title">
+
+      <!-- Chat header -->
+      <header class="chat-header">
+        <div class="chat-avatar" aria-hidden="true">✦</div>
+        <div class="chat-heading">
+          <h2 id="chat-title">Ask Simran AI</h2>
+          <p><span class="status-dot" aria-hidden="true"></span> Knows my projects, skills &amp; journey</p>
+        </div>
+        <div class="chat-header-actions">
+          <button class="chat-action-btn" id="clear-chat-btn" type="button" title="Clear conversation" aria-label="Clear conversation"><i data-lucide="rotate-ccw"></i></button>
+          <button class="chat-action-btn" id="chat-minimize" type="button" title="Minimize chat" aria-label="Minimize chat"><i data-lucide="minus"></i></button>
+          <button class="chat-action-btn" id="chat-maximize" type="button" title="Maximize chat" aria-label="Maximize chat"><i data-lucide="maximize-2"></i></button>
+          <button class="chat-close" id="chat-close" type="button" aria-label="Close chat"><i data-lucide="x"></i></button>
+        </div>
+      </header>
+
+      <!-- Chat messages -->
+      <div class="chat-body" id="chat-body" role="log" aria-live="polite" aria-relevant="additions">
+        <!-- Welcome message -->
+        <div class="bot-message">
+          <div class="message-avatar" aria-hidden="true">✦</div>
+          <div class="message-content">
+            <span class="message-label">SIMRAN'S AI TWIN</span>
+            <div class="message-text">
+              <p>Hello! I'm Simran's AI portfolio assistant. Ask me about her projects, tech stack, experience, background, or anything else — I'll give you accurate answers grounded in her resume and project docs.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Suggestion chips -->
+        <div class="suggestions" id="suggestions" role="group" aria-label="Conversation starters">
+          <button type="button" data-question="Who is Simran and what does she do?"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M5 21a7 7 0 0 1 14 0"></path></svg>Who is Simran?</button>
+          <button type="button" data-question="Walk me through all of Simran's projects with GitHub and live demo links."><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h5l2 2h11v10H3z"></path><path d="M3 7V5h6l2 2"></path></svg>All projects</button>
+          <button type="button" data-question="Tell me about the VectorDB Studio project and its RAG pipeline architecture. Include the GitHub link."><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2a3.5 3.5 0 0 0-3.3 4.7A3.5 3.5 0 0 0 5 13.5 3.5 3.5 0 0 0 8.5 19H9v3"></path><path d="M14.5 2a3.5 3.5 0 0 1 3.3 4.7A3.5 3.5 0 0 1 19 13.5a3.5 3.5 0 0 1-3.5 5.5H15v3"></path><path d="M9 6a3 3 0 0 1 6 0v12a3 3 0 0 1-6 0"></path><path d="M6 10h3m6 0h3M6 14h3m6 0h3"></path></svg>VectorDB &amp; RAG</button>
+          <button type="button" data-question="What is Simran's technical skill set? Which languages, frameworks and tools does she know?"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.6 5.6L3 18v3h3l6.1-6.1a4 4 0 0 0 5.6-5.6L14 13l-3-3z"></path><path d="m16 5 3-3 3 3-3 3"></path></svg>Tech stack</button>
+          <button type="button" data-question="Describe Simran's internship experience at Risoapp India and the AI-ML internship at MSME."><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="14" rx="2"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18m-11 0v2h4v-2"></path></svg>Experience</button>
+          <button type="button" data-question="What is Simran's educational background and academic achievements?"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 10 10-5 10 5-10 5z"></path><path d="M6 12v5c3.5 3 8.5 3 12 0v-5m4-2v6"></path></svg>Education</button>
+          <button type="button" data-question="Tell me about CineMatch — what it does, how it works, and share the GitHub and live demo links."><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3 3 8v13h18V8l-2-5z"></path><path d="M3 8h18M7 3l2 5m4-5 2 5m4-5 2 5M8 13v4m4-4v4m4-4v4"></path></svg>CineMatch</button>
+          <button type="button" data-question="What makes Simran a strong candidate for a software engineering or AI engineering role?"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 14.8 8.7 21 9.6l-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9z"></path></svg>Why hire Simran?</button>
+        </div>
+      </div>
+
+      <!-- Chat input form -->
+      <form class="chat-form" id="chat-form" novalidate>
+        <div class="input-shell">
+          <textarea
+            id="chat-input"
+            rows="1"
+            maxlength="2000"
+            placeholder="Ask me anything about Simran…"
+            aria-label="Your question"
+          ></textarea>
+          <button class="send-button" id="send-button" type="submit" aria-label="Send message">
+            <span aria-hidden="true">↑</span>
+          </button>
+          <button class="stop-button" id="stop-button" type="button" aria-label="Stop generation" style="display:none;">
+            <span aria-hidden="true">■</span>
+          </button>
+        </div>
+        <div class="chat-foot">
+          <span><span class="tiny-lock" aria-hidden="true">⌑</span> Answers grounded in Simran's resume</span>
+          <span>SHIFT+ENTER for newline</span>
+        </div>
+      </form>
+
+    </section>
+  </div>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="/assets/app.js"></script>
+</body>
+</html>

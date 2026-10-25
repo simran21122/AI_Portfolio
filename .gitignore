@@ -1,0 +1,22 @@
+# Secrets - never commit these
+.env
+.env.*
+!.env.example
+
+# Visitor questions log (private, regenerated at runtime)
+backend/unanswered.jsonl
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

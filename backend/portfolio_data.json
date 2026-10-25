@@ -1,0 +1,295 @@
+{
+  "personal": {
+    "name": "D Simran Patra",
+    "short_name": "Simran",
+    "title": "Computer Science Undergraduate & Developer",
+    "tagline": "Building things that think — at the intersection of software engineering, AI, and thoughtful design.",
+    "email": "simranpatra754@gmail.com",
+    "phone": "+91 8144904936",
+    "location": "Berhampur, Ganjam, Odisha, India",
+    "timezone": "IST (UTC+5:30)",
+    "github": "https://github.com/simran21122",
+    "linkedin": "https://linkedin.com/in/d-simran-patra-b53684340/",
+    "portfolio": "http://127.0.0.1:8000",
+    "availability": "Available for opportunities",
+    "summary": "Computer Science undergraduate with hands-on experience in frontend and backend web development, including building RESTful APIs during a software development internship. Worked on projects including a deployed content-based recommendation system and a vector database with a RAG pipeline. Strong problem-solving skills and a quick learner, eager to contribute to a collaborative engineering team."
+  },
+  "education": [
+    {
+      "institution": "NIST University",
+      "degree": "B.Tech. in Computer Science and Engineering",
+      "duration": "2023 – 2027",
+      "cgpa": "8.9",
+      "location": "Berhampur, Odisha"
+    },
+    {
+      "institution": "Sashi Bhusan Rath Government Women's H.S.",
+      "degree": "Intermediate (12th Standard)",
+      "duration": "2021 – 2023",
+      "percentage": "77%"
+    },
+    {
+      "institution": "Sree Girls High School, Berhampur",
+      "degree": "Matriculation (10th Standard)",
+      "percentage": "84.66%"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Risoapp India Pvt Ltd",
+      "role": "Software Developer Intern",
+      "location": "Berhampur (Brahmapur), Odisha — Hybrid",
+      "duration": "May 2026 – Aug 2026",
+      "highlights": [
+        "Contributed to a production-level application by building and maintaining RESTful backend APIs and database operations using Node.js and Express.js",
+        "Collaborated with the engineering team to integrate React.js frontend components with backend services",
+        "Gained practical experience with Git-based version control workflows",
+        "Contributed to the development and maintenance of the MentorX University backend, building RESTful APIs for multiple application modules",
+        "Implemented backend functionality and integrated the APIs with MongoDB",
+        "Contributed to the design and development of the Admin Dashboard frontend",
+        "Performed API testing, debugging, and troubleshooting to resolve backend–frontend integration issues"
+      ],
+      "technologies": [
+        "Node.js",
+        "Express.js",
+        "React.js",
+        "REST APIs",
+        "Git",
+        "MongoDB"
+      ]
+    },
+    {
+      "company": "Central Tool Room & Training Centre (MSME), Govt. of India",
+      "role": "AI-ML Intern",
+      "location": "Bhubaneswar",
+      "duration": "Jun 2025 – Jul 2025",
+      "highlights": [
+        "Built a real-time Face Recognition System using OpenCV, CNN, and Keras",
+        "Applied deep learning, NLP, and computer vision concepts learned during structured AI/ML training"
+      ],
+      "technologies": [
+        "Python",
+        "OpenCV",
+        "CNN",
+        "Keras",
+        "Deep Learning",
+        "NLP",
+        "Computer Vision"
+      ]
+    }
+  ],
+  "skills": {
+    "programming_languages": [
+      "Java",
+      "Python",
+      "JavaScript"
+    ],
+    "web_technologies": [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS"
+    ],
+    "ai_ml": [
+      "Machine Learning",
+      "NLP",
+      "TF-IDF",
+      "scikit-learn",
+      "RAG",
+      "Vector Databases",
+      "LLM Integration",
+      "Deep Learning",
+      "Computer Vision",
+      "CNN",
+      "Keras",
+      "OpenCV",
+      "Embeddings"
+    ],
+    "databases_backend": [
+      "SQL",
+      "MongoDB",
+      "REST API Design"
+    ],
+    "core_cs": [
+      "Data Structures",
+      "Algorithms",
+      "Object-Oriented Programming (OOP)",
+      "Database Management (DBMS)"
+    ],
+    "tools_platforms": [
+      "GitHub",
+      "Git",
+      "Postman",
+      "VS Code",
+      "Figma",
+      "Canva",
+      "FastAPI",
+      "Uvicorn"
+    ]
+  },
+  "projects": [
+    {
+      "id": "credex",
+      "name": "CREDEX.IO",
+      "aliases": [
+        "credex",
+        "credex.io",
+        "CREDEX",
+        "credibility scoring"
+      ],
+      "subtitle": "Measure What You Can Build",
+      "type": "Team Project",
+      "role": "Frontend Developer",
+      "description": "A credibility scoring experience that turns developer activity into a signal recruiters can understand. Aggregates data from GitHub and coding platforms into an intuitive developer score card.",
+      "purpose": "Help recruiters evaluate developers beyond traditional resumes by quantifying real coding activity and open-source contributions into a transparent credibility score.",
+      "features": [
+        "Multi-platform credibility scoring system aggregating GitHub and coding platform data",
+        "Intuitive score card UI translating raw developer metrics into a recruiter-friendly score",
+        "Responsive React.js frontend with clean, modern design"
+      ],
+      "technologies": [
+        "React.js",
+        "JavaScript",
+        "UI Engineering",
+        "Developer Tools"
+      ],
+      "github": "https://github.com/simran21122/CREDEX",
+      "live_demo": "https://credex-io.vercel.app"
+    },
+    {
+      "id": "indian_compass",
+      "name": "The Indian Compass",
+      "aliases": [
+        "indian compass",
+        "India compass",
+        "cultural guide"
+      ],
+      "subtitle": "Cultural & Spiritual Guide of India",
+      "type": "Team Project",
+      "role": "Frontend Developer",
+      "description": "An interactive journey through India's heritage, festivals, cuisines, and artisan stories. Features an integrated AI cultural assistant and interactive maps. This project earned the team the Runner-up position at the Hack Arena 2.0 National Level Hackathon.",
+      "purpose": "Showcase India's rich cultural diversity through an interactive digital platform with AI-powered features.",
+      "features": [
+        "Responsive, cross-browser frontend showcasing India's heritage, festivals, and cuisines",
+        "Integrated AI cultural assistant for visitor questions",
+        "Interactive maps for geographic exploration",
+        "Artisan marketplace UI components"
+      ],
+      "technologies": [
+        "React.js",
+        "Tailwind CSS",
+        "AI Assistant",
+        "JavaScript"
+      ],
+      "github": "https://github.com/simran21122/The-Indian-Compass",
+      "live_demo": "https://the-indian-compass-9dlu.vercel.app"
+    },
+    {
+      "id": "vectordb_studio",
+      "name": "VectorDB Studio",
+      "aliases": [
+        "vectordb",
+        "vector database",
+        "rag pipeline",
+        "AI model",
+        "vector db"
+      ],
+      "subtitle": "Vector Database and RAG Pipeline",
+      "type": "Solo Project",
+      "role": "Sole Developer",
+      "description": "A from-scratch vector database implementation in Python featuring multiple search strategies (HNSW, KD-Tree, Brute Force), three distance metrics, a latency benchmark, and a full retrieval-augmented generation pipeline.",
+      "purpose": "Demonstrate deep understanding of vector database internals and RAG architecture by building both from scratch without relying on managed services.",
+      "features": [
+        "Vector database built from scratch in Python — no managed vector DB dependency",
+        "Three search algorithms: HNSW, KD-Tree, and Brute Force",
+        "Three distance metrics with latency benchmarking across all strategies",
+        "RAG pipeline that chunks documents, generates 768-dimensional embeddings",
+        "LLM integration with Gemini API and Ollama for question answering"
+      ],
+      "technologies": [
+        "Python",
+        "RAG",
+        "Embeddings",
+        "HNSW",
+        "KD-Tree",
+        "Gemini API",
+        "Ollama",
+        "NLP",
+        "Flask",
+        "NumPy",
+        "PCA Visualisation",
+        "REST API"
+      ],
+      "github": "https://github.com/simran21122/AI_Model",
+      "live_demo": null
+    },
+    {
+      "id": "cinematch",
+      "name": "CineMatch",
+      "aliases": [
+        "cinematch",
+        "movie recommendation",
+        "film recommendation",
+        "cinema"
+      ],
+      "subtitle": "Movie Recommendation System",
+      "type": "Solo Project",
+      "role": "Sole Developer",
+      "description": "A deployed movie recommendation web application combining content-based filtering (TF-IDF similarity) and genre-based recommendations via the TMDB API. Features a clean HTML/CSS/JS frontend backed by a Python REST API.",
+      "purpose": "Help users discover films they will enjoy using content similarity and genre signals.",
+      "features": [
+        "TF-IDF content similarity model for content-based movie recommendations",
+        "TMDB API integration for genre-based recommendations",
+        "Full-stack application: HTML/CSS/JS frontend + Python REST API backend",
+        "Deployed and publicly accessible on Render"
+      ],
+      "technologies": [
+        "Python",
+        "TF-IDF",
+        "TMDB API",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "REST API",
+        "Render",
+        "FastAPI",
+        "scikit-learn",
+        "Uvicorn"
+      ],
+      "github": "https://github.com/simran21122/CINEMATCH",
+      "live_demo": "https://cinematch-f9e1.onrender.com"
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Runner-up – Hack Arena 2.0 National Level Hackathon",
+      "organizer": "IEEE Student Branch, Guru Nanak Institutions, Hyderabad",
+      "description": "Secured Runner-up position among 40+ teams at Hack Arena organized by IEEE Student Branch, with the team project The Indian Compass"
+    },
+    {
+      "title": "3rd Position – Code Kriti 4.0 Innovation Challenge",
+      "organizer": "Coding Design and Development & Parala Maharaja Engineering College, Berhampur",
+      "date": "Mar 2026",
+      "description": "Team of two with Mahesh Kumar Raulo. In the Qualifier Round, analyzed a failed startup case study, identified the major reasons behind its failure, and suggested improvements. In the Final Round, pitched an original startup idea followed by an interactive Q&A with the judges"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Artificial Intelligence",
+      "issuer": "IBM",
+      "date": "Feb 2026"
+    },
+    {
+      "name": "Digital Skills: User Experience (92%)",
+      "issuer": "Accenture x FutureLearn",
+      "date": "Oct 2024"
+    },
+    {
+      "name": "AWS Cloud with AI",
+      "issuer": "LinuxWorld National Level",
+      "date": "Jan 2024"
+    }
+  ]
+}

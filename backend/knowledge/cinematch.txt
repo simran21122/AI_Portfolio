@@ -1,0 +1,34 @@
+=== PROJECT DEEP DIVE: CineMatch (based on the project's README) ===
+What it is: A movie discovery and recommendation web application with an HTML/CSS/JavaScript frontend and a FastAPI REST API backend. It offers a movie feed, TMDB search and details, TF-IDF content-based recommendations, and genre-based recommendations. It is a solo project and is deployed publicly.
+
+Main features:
+- A responsive, dark, cinema-inspired UI.
+- Movie feeds: Trending, Popular, Top Rated, Now Playing and Upcoming.
+- Search with live suggestions and matching results.
+- Movie details page with posters, backdrop, release date, genres, overview and rating.
+- Content-based recommendations from a TF-IDF matrix (the saved model artifacts are df.pkl, indices.pkl, tfidf.pkl and tfidf_matrix.pkl).
+- Genre recommendations through the TMDB discover API.
+- A FastAPI health endpoint and interactive API documentation (/docs).
+- The frontend is served by FastAPI itself, so no separate frontend server is needed.
+
+Tech stack: HTML5, CSS3 and vanilla JavaScript on the frontend; Python, FastAPI and Uvicorn on the backend; the TMDB API for movie data and posters; scikit-learn TF-IDF artifacts with NumPy, SciPy and Pandas for the similarity model.
+
+REST API endpoints:
+- GET /api/health: check API and model status.
+- GET /api/home?category=trending&limit=24: fetch a movie feed (categories: trending, popular, top_rated, now_playing, upcoming).
+- GET /api/search?query=batman: search TMDB movies.
+- GET /api/movie/{tmdb_id}: fetch movie details.
+- GET /api/movie/{tmdb_id}/recommendations: returns details plus TF-IDF matches and genre matches.
+- GET /api/recommend/genre: genre recommendations for a movie.
+- GET /api/recommend/tfidf: inspect local TF-IDF matches for a title.
+
+How the recommendation logic works: The TF-IDF matrix represents each movie's text features as a vector. For a selected title, the API finds its row in the saved title index, computes similarity against the other rows, sorts the scores and returns the highest-scoring different titles. TMDB search is then used to attach poster metadata to these titles. Genre recommendations use the selected movie's first genre with the TMDB discover endpoint. If a title is missing from the local dataset, the UI can still show genre recommendations.
+
+Engineering details:
+- A shared asynchronous HTTP client with bounded concurrency for TMDB requests.
+- Short-lived caching of successful responses and retries for transient failures.
+- Search and movie feeds can fall back to a previously successful result during a temporary upstream outage, while invalid API-key responses are never hidden by stale data.
+- Detailed server logging for diagnosing TMDB failures, with API keys and sensitive headers kept out of the logs.
+- Offline unit tests for the TMDB resilience logic.
+- Security practice: the TMDB API key is read only by the backend and never exposed in frontend JavaScript; the .env file is kept out of version control.
+- The project README documents setup, endpoints, recommendation logic and troubleshooting.
