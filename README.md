@@ -4,7 +4,7 @@ A macOS-inspired developer portfolio for **D Simran Patra**, with a built-in AI 
 
 The backend is **FastAPI** and the frontend is plain **HTML / CSS / JavaScript** with no build step. FastAPI serves both, so the whole site deploys as one service.
 
-**Live site:** _[add your deployed URL here](https://simran-ai-portfolio.onrender.com)_
+**Live site:** _[Live Demo](https://simran-ai-portfolio.onrender.com)_
 
 ---
 
