@@ -32,6 +32,7 @@ BASE_DIR = Path(__file__).resolve().parent
 PROJECT_DIR = BASE_DIR.parent
 FRONTEND_DIR = PROJECT_DIR / "frontend"
 RESUME_PATH = BASE_DIR / "my_resume.pdf"
+DOWNLOAD_RESUME_PATH = BASE_DIR / "Simran_Patra_Resume.pdf"
 PORTFOLIO_DATA_PATH = BASE_DIR / "portfolio_data.json"
 EXTRA_KNOWLEDGE_PATH = BASE_DIR / "extra_knowledge.txt"
 KNOWLEDGE_DIR = BASE_DIR / "knowledge"
@@ -397,10 +398,10 @@ def health() -> dict[str, Any]:
 
 @app.get("/resume")
 def resume_pdf():
-    if not RESUME_PATH.exists():
-        raise HTTPException(status_code=404, detail="Resume PDF not found at backend/my_resume.pdf")
+    if not DOWNLOAD_RESUME_PATH.exists():
+        raise HTTPException(status_code=404, detail="Resume PDF not found")
     return FileResponse(
-        RESUME_PATH,
+        DOWNLOAD_RESUME_PATH,
         media_type="application/pdf",
         filename="Simran_Patra_Resume.pdf",
     )
